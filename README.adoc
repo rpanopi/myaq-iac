@@ -1,0 +1,20 @@
+= MyAQ Infrastructure as Code
+
+* Use eks-create-cluster.sh to create your EKS cluster
+* Use deployment.yml to create your Kubernetes deployment
+
+== CI/CD Environment
+
+* MyAQ frontend and MyAQ backend uses GitHub for its SCM, Docker Hub for its image repository
+and Kubernetes for Container Orchestration.
+
+* Ideally there would be a CI/CD Pipeline Orchestration Tool such as Jenkins that will pull or listen to GitHub repository.
+This will execute the build, include all necessary CI steps along the way such as unit test, quality scan, etc..
+
+* Once Docker image is created, it can then be stored to Docker Hub or Amazon Elastic Container Registry (ECR).
+
+* EKS cluster is created or prepared while image deployment will be done through Kubernetes Deployments
+
+== Running Instance
+
+http://ae0582fd96eae43d2a1f202715ecbda3-5080593.us-east-1.elb.amazonaws.com/
