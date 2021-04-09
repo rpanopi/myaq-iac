@@ -1,6 +1,22 @@
 = MyAQ Infrastructure as Code
 
-* Use eks-create-cluster.sh to create your EKS cluster
+
+* Create cluster:
++
+[source,yaml]
+----
+$ eksctl create cluster --config-file myaq-cluster.yml --version=1.18
+----
+
+* Create Kubernetes Deployments:
++
+[source,yaml]
+----
+$ ekubectl create -f myaq-backend-deployment.yml --save-config
+$ ekubectl create -f myaq-frontend-deployment.yml --save-config
+----
+
+
 * Use deployment.yml to create your Kubernetes deployment
 
 == CI/CD Environment
